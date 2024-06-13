@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Perpustakaan Kelvin</title>
+    <style>
+        /* Body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: orange; /* Warna latar belakang orange */
+        }
+
+        /* Header */
+        header {
+            background-color: #000000; /* Warna latar belakang header */
+            color: #f9f9f9;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #333;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #000000;
+            color: #f9f9f9;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2d3748;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000; /* Warna latar belakang footer */
+            color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .socials {
+            list-style: none;
+            padding: 0;
+        }
+
+        .socials li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .socials a {
+            color: #f9f9f9;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: #cbd5e0;
+        }
+    </style>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Perpustakaan Kelvin</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#">Profil <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="Perpustakaan.html">perpustakaan</a>
+                        <a href="contact.html">Kontak</a>
+                        <a href="pustakawan.html">Pustakawan</a>
+                        <a href="database.html">database</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Layanan <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="form-anggota.html">Daftar Anggota</a>
+                        <a href="form-anggota">Perpanjang Koleksi</a>
+                        <a href="audio.video.html">audio&video</a>
+                        <a href="php.html">Belajar PHP</a>
+                        <a href="kalkulator.html">Perhitungan</a>
+                        <a href="database.html">Database</a>
+                        
+                    </div>
+                </li>
+                <li><a href="paragraf.html">Paragraf</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="text" name="email" placeholder="Your Email">
+                <textarea name="message" placeholder="Your Message" rows="5"></textarea>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <ul class="socials">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+        <p>&copy; 2024 Perpustakaan Kelvin. All rights reserved.</p>
+    </footer>
+</body>
+</html>

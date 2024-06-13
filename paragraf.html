@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS: Pengertian dan Perbedaan</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: orange;
+            color: #333;
+            margin: 0;
+            padding-top: 50px; /* Untuk memberi ruang atas agar header tidak menutup konten */
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end; /* Posisi menu ke kanan */
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        nav ul li:first-child {
+            margin-left: 20px; /* Jarak kiri untuk nama Perpustakaan Kelvin */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fffdfd;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+            left: 0;
+            top: 100%;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #000000;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 100px; /* Untuk memberi ruang atas agar konten tidak tertutup oleh header */
+        }
+
+        .container h1, .container h2 {
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            margin-bottom: 20px;
+        }
+
+        .container ul {
+            margin-bottom: 20px;
+        }
+
+        .container ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020202;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer .sosials a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+
+        footer .sosials a:hover {
+            color: #ff0; /* Ubah warna ikon saat dihover */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 class="library-name">Perpustakaan Kelvin</h1>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li class="dropdown">
+                <a href="#">Profil</a>
+                <div class="dropdown-content">
+                    <a href="Perpustakaan.html">Perpustakaan</a>
+                    <a href="contact.html">Kontak</a>
+                    <a href="pustakawan.html">Pustakawan</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Layanan</a>
+                <div class="dropdown-content">
+                    <a href="dataanggota.html">Daftar Anggota</a>
+                    <a href="form-anggota.html">Perpanjang Koleksi</a>
+                    <a href="audio.video.html">Audio & Video</a>
+                    <a href="php.html">Belajar PHP</a>
+                    <a href="kalkulator.html">Perhitungan</a>
+                    <a href="database.html">Database</a>
+                </div>
+            </li>
+            <li><a href="paragraf.html">Paragraf</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Apa itu HTML dan CSS?</h1>
+        <p>HTML (HyperText Markup Language) adalah bahasa markup standar untuk membuat halaman web. HTML mendefinisikan struktur dan konten sebuah halaman web dengan menggunakan elemen-elemen atau tag-tag tertentu.</p>
+        <p>CSS (Cascading Style Sheets) adalah bahasa stylesheet yang digunakan untuk mengatur tampilan atau presentasi dari dokumen HTML. Dengan CSS, Anda dapat mengontrol tata letak, warna, font, dan berbagai aspek visual lainnya dari sebuah halaman web.</p>
+
+        <h2>HTML Tag</h2>
+        <p>HTML menggunakan tag-tag untuk mendefinisikan elemen-elemen atau bagian-bagian dari sebuah halaman web. Tag-tag ini memberikan struktur dan konten pada halaman web. Beberapa contoh tag HTML yang umum digunakan antara lain:</p>
+        <ul>
+            <li>&lt;html&gt; - Mendefinisikan dokumen HTML</li>
+            <li>&lt;head&gt; - Mendefinisikan informasi metadata dari dokumen HTML</li>
+            <li>&lt;title&gt; - Mendefinisikan judul dari dokumen HTML</li>
+            <li>&lt;body&gt; - Mendefinisikan isi dari dokumen HTML</li>
+            <li>&lt;h1&gt; - Mendefinisikan heading level 1</li>
+            <li>&lt;p&gt; - Mendefinisikan sebuah paragraf</li>
+            <li>&lt;a&gt; - Mendefinisikan sebuah hyperlink</li>
+            <li>&lt;img&gt; - Mendefinisikan sebuah gambar</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Ikuti kami di media sosial:</p>
+        <div class="sosials">
+            <a href="#"><i class="icon-instagram" data-feather="instagram"></i></a>
+            <a href="#"><i class="icon-twitter" data-feather="twitter"></i></a>
+            <a href="#"><i class="icon-facebook" data-feather="facebook"></i></a>
+        </div>
+    </footer>
+
+    <!-- Script untuk ikon Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace()
+    </script>
+</body>
+</html>

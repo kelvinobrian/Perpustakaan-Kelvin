@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Database</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #feae01;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #020202;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 28px;
+            padding-left: 20px;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            display: inline-block;
+        }
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        form input, form button {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+        }
+        .footer {
+            background-color: #050404;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <h1>Perpustakaan Kelvin</h1>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#">Profil <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="Perpustakaan.html">Perpustakaan</a>
+                        <a href="contact.html">Kontak</a>
+                        <a href="pustakawan.html">Pustakawan</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Layanan <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="dataanggota.html">Daftar Anggota</a>
+                        <a href="form-anggota.html">Perpanjang Koleksi</a>
+                        <a href="php.html">Belajar PHP</a>
+                        <a href="kalkulator.html">Perhitungan</a>
+                        <li><a href="database.html">Database</a></li>
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Library Database</h1>
+        <table id="libraryTable">
+            <thead>
+                <tr>
+                    <th>Judul</th>
+                    <th>Penulis</th>
+                    <th>Tahun</th>
+                    <th>ISBN</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+
+        <form id="libraryForm">
+            <input type="hidden" id="editIndex">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="author" placeholder="Author" required>
+            <input type="number" id="year" placeholder="Year" required>
+            <input type="text" id="isbn" placeholder="ISBN" required>
+            <button type="button" onclick="addOrUpdateBook()">Tambah/Perbarui</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Perpustakaan Kelvin. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        let libraryData = [
+            { title: "Laut Bercerita", author: "Leila Salikha Chudori", year: 2017, isbn: "9786024246945" },
+            { title: "The Chronicles Of Narnia #1: The Magician`s Nephew", author: "C.S Lewis", year: 2024, isbn: "9786020336398" },
+            { title: "Pulang", author: "Leila S. Chudori", year: 2017, isbn: "9786024242756" },
+            { title: "Harry Potter dan Piala Api (Harry Potter and The Goblet of Fire)", author: "J. K. Rowling", year: 2024, isbn: "9786020000000" },
+        ];
+
+        function displayLibrary() {
+            const tbody = document.getElementById('libraryTable').getElementsByTagName('tbody')[0];
+            tbody.innerHTML = "";
+            libraryData.forEach((book, index) => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.year}</td>
+                    <td>${book.isbn}</td>
+                    <td>
+                        <button onclick="editBook(${index})">Edit</button>
+                        <button onclick="deleteBook(${index})">Hapus</button>
+                    </td>
+                `;
+            });
+        }
+
+        function addOrUpdateBook() {
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const year = document.getElementById('year').value;
+            const isbn = document.getElementById('isbn').value;
+            const editIndex = document.getElementById('editIndex').value;
+
+            const book = { title, author, year, isbn };
+
+            if (editIndex === "") {
+                libraryData.push(book);
+            } else {
+                libraryData[editIndex] = book;
+                document.getElementById('editIndex').value = "";
+            }
+
+            document.getElementById('libraryForm').reset();
+            displayLibrary();
+        }
+
+        function editBook(index) {
+            const book = libraryData[index];
+            document.getElementById('title').value = book.title;
+            document.getElementById('author').value = book.author;
+            document.getElementById('year').value = book.year;
+            document.getElementById('isbn').value = book.isbn;
+            document.getElementById('editIndex').value = index;
+        }
+
+        function deleteBook(index) {
+            libraryData.splice(index, 1);
+            displayLibrary();
+        }
+
+        displayLibrary();
+    </script>
+</body>
+</html>

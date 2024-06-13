@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Members</title>
+  <link rel="stylesheet" href="anggota.css">
+  <style>
+    /* Style untuk dropdown menu */
+/* Dropdown */
+.dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #333;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+    /* Style untuk header */
+    .header {
+      background-color: #000000;
+      color: #f9f9f9;
+      padding: 20px 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .library-name {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* Style untuk navbar */
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end; /* Menuju navbar ke kanan */
+    }
+
+    .navbar ul li {
+      margin-left: 20px; /* Menggunakan margin kiri agar menu terlihat rapi */
+      position: relative;
+    }
+
+    .navbar ul li a {
+      color: #f9f9f9;
+      text-decoration: none;
+      font-family: Arial, sans-serif; /* Mengubah font pada navbar */
+    }
+
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="library-name">Perpustakaan Kelvin</div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li class="dropdown">
+          <a href="#">Profil</a>
+          <div class="dropdown-content">
+            <a href="Perpustakaan.html">Perpustakaan</a>
+            <a href="contact.html">Kontak</a>
+            <a href="pustakawan.html">Pustakawan</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Layanan</a>
+          <div class="dropdown-content">
+            <a href="dataanggota.html">Daftar Anggota</a>
+            <a href="form-anggota.html">Perpanjang Koleksi</a>
+            <a href="audio.video.html">audio&video</a>
+            <a href="php.html">Belajar PHP</a>
+            <a href="kalkulator.html">Perhitungan</a>
+            <li><a href="database.html">Database</a></li>
+          </div>
+        </li>
+        <li><a href="paragraf.html">Paragraf</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="member">
+      <h2>LEO MESSI</h2>
+      <p>ID: 001</p>
+      <p>Email: LeotheGoat@gmail.com</p>
+    </div>
+    <div class="member">
+      <h2>Neymar</h2>
+      <p>ID: 002</p>
+      <p>Email: Neymaruu@gmail.com</p>
+    </div>
+    <div class="member">
+      <h2>Cristiano Ronaldo</h2>
+      <p>ID: 003</p>
+      <p>Email: RonaldoTheCamel@gmail.com</p>
+    </div>
+    <div class="member">
+      <h2>Benzema</h2>
+      <p>ID: 004</p>
+      <p>Email: HajiBenzema@gmail.com</p>
+    </div>
+    <div class="member">
+      <h2>Vinicius</h2>
+      <p>ID: 005</p>
+      <p>Email: Babycryy@gmail.com</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; Perpustakaan Kelvin</p>
+  </footer>
+</body>
+</html>

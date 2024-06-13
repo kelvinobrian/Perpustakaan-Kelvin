@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio dan Video</title>
+    <style>
+        /* Body */
+        html {
+            background-color: #FFA500; /* Ubah warna background menjadi orange */
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #000000;
+            color: #f9f9f9;
+            padding: 18px;
+            font-size: 20px;
+            font-family: 'Lora', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 15px;
+            position: relative; /* Tambahkan position relative */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+            left: 0;
+            top: 100%;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Sections */
+        section {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Title */
+        section h2 {
+            color: #4a5568;
+            font-family: 'Lora', serif;
+        }
+
+        /* Text */
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Media */
+        audio, video {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-us {
+            text-align: left;
+        }
+
+        .socials {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .socials li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .socials li:last-child {
+            margin-right: 0;
+        }
+
+        .socials a {
+            color: #f9f9f9;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: #cbd5e0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Perpustakaan Kelvin</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li class="dropdown"> 
+                    <a href="#">Profil</a>
+                    <div class="dropdown-content">
+                        <a href="Perpustakaan.html">Perpustakaan</a>
+                        <a href="contact.html">Kontak</a>
+                        <a href="pustakawan.html">pustakawan</a>
+                    </div>
+                </li>
+                <li class="dropdown"> 
+                    <a href="#">Layanan</a>
+                    <div class="dropdown-content">
+                        <a href="dataanggota.html">Daftar Anggota</a>
+                        <a href="form-anggota">Perpanjang Koleksi</a>
+                        <a href="php.html">Belajar PHP</a>
+                        <a href="kalkulator.html">Perhitungan</a>
+                        <li><a href="database.html">Database</a></li>
+                    </div>
+                </li>
+                <li><a href="paragraf.html">Paragraf</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Audio Mars UNIMED</h2>
+        <audio controls>
+            <source src="Mars Unimed.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+    <section>
+        <h2>Video Mars UNIMED</h2>
+        <video controls width="320" height="240">
+            <source src="Mars Unimed.Mp4" type="video/mp4">
+        </video>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <p>Email: kelvinobrian10@gmail.com</p>
+                <p>Phone: 081370816844</p>
+            </div>
+            <ul class="socials">
+                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

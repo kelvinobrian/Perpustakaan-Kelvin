@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: orange; /* Warna latar belakang oranye */
+  }
+  
+  .header {
+    background-color: black; /* Warna latar belakang hitam */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .navbar {
+    margin-top: 0; /* Menghapus margin atas navbar */
+    background-color: black; /* Warna latar belakang hitam */
+    color: white;
+    text-align: right; /* Posisi navbar ke kanan */
+    padding: 10px 20px;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    display: inline;
+    margin-left: 20px; /* Jarak antara item-menu */
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .member {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .member h2 {
+    margin: 0;
+  }
+  
+  .member p {
+    margin: 5px 0;
+  }
+  
+  .footer {
+    background-color: black; /* Warna latar belakang hitam */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  

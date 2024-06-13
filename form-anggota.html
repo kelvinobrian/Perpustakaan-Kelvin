@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir Perpanjangan Buku</title>
+    <style>
+        /* Body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            background-color: #FFA500; /* Warna latar belakang oranye */
+        }
+
+        /* Header */
+        header {
+            background-color: #000000;
+            color: #f9f9f9;
+            padding: 18px;
+            font-size: 20px;
+            font-family: 'Lora', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #080808;
+            color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-us {
+            text-align: left;
+        }
+
+        .socials {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .socials li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .socials li:last-child {
+            margin-right: 0;
+        }
+
+        .socials a {
+            color: #f9f9f9;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: #cbd5e0;
+        }
+        /* Dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #ffffff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #333333;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Perpustakaan Kelvin</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#">Profil</a>
+                    <div class="dropdown-content">
+                        <a href="Perpustakaan.html">Perpustakaan</a>
+                        <a href="contact.html">Kontak</a>
+                        <a href="pustakawan.html">Pustakawan</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Layanan</a>
+                    <div class="dropdown-content">
+                        <a href="dataanggota.html">Daftar Anggota</a>
+                        <a href="form-anggota.html">Perpanjang Koleksi</a>
+                        <a href="audio.video.html">audio&video</a>
+                        <a href="php.html">Belajar PHP</a>
+                        <a href="kalkulator.html">Perhitungan</a>
+                        <li><a href="database.html">Database</a></li>
+
+                    </div>
+                </li>
+                <li><a href="Perpustakaan.html">Paragraf</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 align="center">Form Perpanjangan Masa Pinjam</h2>
+    <p>Pengajuan Perpanjangan Masa Pinjam Buku secara online hanya akan dilayani apabila dilakukan pada hari dan jam kerja (Senin s.d Jumat pukul 08.00-15.30), peminjaman belum melebihi tenggat waktu pengembalian, serta hanya dapat dilakukan satu kali di setiap peminjaman untuk buku yang sama.</p>
+    
+    <form action="contact.php" method="POST">
+        <fieldset>
+            <p>
+                <label>Member ID :</label>
+                <input type="text" name="member_id"/>
+            </p>
+            <p>
+                <label>Kode Eksemplar :</label>
+                <input type="text" name="kode_eksemplar"/>
+            </p>
+            <p>
+                <input type="submit" name="submit" value="Submit" />
+            </p>
+        </fieldset>
+    </form>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <p>Email: kelvinobrian10@gmail.com</p>
+                <p>Phone: 081370816844</p>
+            </div>
+            <ul class="socials">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

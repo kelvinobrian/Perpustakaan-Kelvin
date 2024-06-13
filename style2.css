@@ -1,0 +1,78 @@
+body {
+    background-color: orange;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Menggunakan jenis font yang lebih modern */
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 900;
+}
+
+.navbar-brand a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content {
+    padding: 6rem 2rem 5rem 2rem; /* Updated padding to provide space above footer */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 4rem; /* Added bottom margin to create space between content and footer */
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    cursor: pointer; /* Add cursor pointer to indicate image is clickable */
+}
+
+.bio {
+    text-align: left;
+    max-width: 500px;
+}
+
+.bio p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem; /* Mengatur ukuran font untuk teks biodata */
+    line-height: 1.6; /* Mengatur jarak antar baris */
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.social-icon {
+    margin: 0 0.5rem;
+}
+
+.social-icon svg {
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth hover effect */
+}
+
+.social-icon:hover svg {
+    transform: scale(1.2); /* Scale up the icon on hover */
+}

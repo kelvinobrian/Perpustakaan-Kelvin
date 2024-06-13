@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		    html{
+        background:url('harli-marten-n7a2OJDSZns-unsplash.jpg')no-repeat center fixed;
+    -webkit-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    }
+	</style>
+	<title> Penggunaan Audio dan Video</title>
+</head>
+</body>
+<center><b><head><tittle>Tugas Modul 1(2) Pemograman Web</tittle></head></b></center>
+<body>
+<p>Nama: kelvin obrian nathanael siringoringo</p>
+<p>Nim: 210709068</p>
+<br/>
+<br/>
+<p><b>Penggunaan Audio</b></p>
+<p> Mars Unimed</p>
+<audio controls>
+<source src="Mars Unimed.mp3"type="audio/mpeg">
+</audio>
+<p><b>Penggunaan Video</b></p>
+<p> Mars Unimed</p>
+ <video controls width="320" height="240">
+<source src="Mars Unimed.Mp4"type="video/mp4">
+</video>
+</body>
+</html>

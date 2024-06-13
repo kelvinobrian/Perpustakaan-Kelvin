@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #feae01;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #020202;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 28px;
+            padding-left: 20px;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            display: inline-block;
+        }
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+        .footer {
+            background-color: #050404;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            clear: both;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="password"], button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .message {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .message.success {
+            color: green;
+        }
+        .message.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <h1>Perpustakaan Kelvin</h1>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#">Profil <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="Perpustakaan.html">Perpustakaan</a>
+                        <a href="contact.html">Kontak</a>
+                        <a href="pustakawan.html">Pustakawan</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Layanan <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="dataanggota.html">Daftar Anggota</a>
+                        <a href="form-anggota.html">Perpanjang Koleksi</a>
+                        <a href="php.html">Belajar PHP</a>
+                        <a href="kalkulator.html">Perhitungan</a>
+                        <li><a href="database.html">Database</a></li>
+                    </div>
+                </li>
+                <li><a href="paragraf.html">paragraf</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form" onsubmit="return validateForm()">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="message" class="message"></p>
+        <p>USERNAME = user</p>
+        <P>PASSWORD = pass </P>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Perpustakaan Kelvin. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value.trim();
+
+            if (username === '' || password === '') {
+                showMessage('Input tidak lengkap.', 'error');
+                return false;
+            }
+
+            // Contoh username dan password yang diharapkan
+            var expectedUsername = 'user';
+            var expectedPassword = 'pass';
+
+            if (username === expectedUsername && password === expectedPassword) {
+                showMessage('Login sukses.', 'success');
+                return true;
+            } else {
+                showMessage('Username atau password salah.', 'error');
+                return false;
+            }
+        }
+
+        function showMessage(msg, type) {
+            var messageElement = document.getElementById('message');
+            messageElement.textContent = msg;
+
+            if (type === 'success') {
+                messageElement.className = 'message success';
+            } else if (type === 'error') {
+                messageElement.className = 'message error';
+            }
+        }
+    </script>
+</body>
+</html>

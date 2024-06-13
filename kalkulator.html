@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #feae01;
+            margin: 0; /* Menghapus margin default dari body */
+            padding: 0;
+        }
+        .navbar {
+            background-color: #020202;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; /* Penambahan padding untuk memisahkan konten dari tepi */
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 28px;
+            padding-left: 20px;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            display: inline-block;
+        }
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+        .footer {
+            background-color: #050404;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            clear: both; /* Membersihkan floating element */
+            position: fixed; /* Mengatur posisi footer */
+            bottom: 0;
+            left: 0;
+        }
+        .content {
+            padding: 20px;
+            padding-bottom: 60px; /* Menyesuaikan padding bawah untuk menghindari penutupan oleh footer */
+            margin-top: 80px; /* Menyesuaikan margin atas agar konten tidak tertutup navbar */
+        }
+        .calculator {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"],
+        button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <h1>Perpustakaan Kelvin</h1>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#">Profil <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="Perpustakaan.html">Perpustakaan</a>
+                        <a href="contact.html">Kontak</a>
+                        <a href="pustakawan.html">Pustakawan</a>
+                        <a href="database.html">Database</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Layanan <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="dataanggota.html">Daftar Anggota</a>
+                        <a href="form-anggota.html">Perpanjang Koleksi</a>
+                        <a href="php.html">Belajar PHP</a>
+                        <a href="kalkulator.html">Perhitungan</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="calculator">
+            <h2>Simple Calculator</h2>
+            <input type="number" id="num1" placeholder="Enter first number">
+            <input type="number" id="num2" placeholder="Enter second number">
+            <button onclick="add()">Add</button>
+            <button onclick="subtract()">Subtract</button>
+            <button onclick="multiply()">Multiply</button>
+            <button onclick="divide()">Divide</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Simple Calculator. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function add() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = num1 + num2;
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+
+        function subtract() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = num1 - num2;
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+
+        function multiply() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = num1 * num2;
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+
+        function divide() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            if (num2 === 0) {
+                document.getElementById('result').innerText = 'Cannot divide by zero!';
+            } else {
+                var result = num1 / num2;
+                document.getElementById('result').innerText = 'Result: ' + result;
+            }
+        }
+    </script>
+</body>
+</html>

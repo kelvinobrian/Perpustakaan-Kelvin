@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Pustakawan</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        /* Body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: orange; /* Warna latar belakang orange */
+        }
+
+        .navbar {
+            background-color: #000000; /* Warna latar belakang header */
+            color: #ffffff; /* Warna teks header */
+            padding: 20px;
+            display: flex; /* Mengubah display menjadi flex */
+            justify-content: space-between; /* Menempatkan elemen ke sisi kanan dan kiri */
+            align-items: center; /* Mengatur penempatan vertikal */
+            font-family: 'Lora', serif; /* Mengubah font teks */
+        }
+
+        .navbar-brand a {
+            color: #ffffff; /* Warna teks brand */
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: auto; /* Memindahkan ke ujung kiri */
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Mengubah display menjadi flex */
+        }
+
+        .navbar ul li {
+            margin: 0 10px;
+        }
+
+        .navbar ul li a {
+            color: #ffffff; /* Warna teks navigasi */
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #ffffff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #333333;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <a href="#">Perpustakaan Kelvin</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li class="dropdown">
+                <a href="#">Profil</a>
+                <div class="dropdown-content">
+                    <a href="Perpustakaan.html">Perpustakaan</a>
+                    <a href="contact.html">Kontak</a>
+                    <a href="pustakawan.html">Pustakawan</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Layanan</a>
+                <div class="dropdown-content">
+                    <a href="dataanggota.html">Daftar Anggota</a>
+                    <a href="form-anggota.html">Perpanjang Koleksi</a>
+                    <a href="audio.video.html">audio&video</a>
+                    <a href="php.html">Belajar PHP</a>
+                    <a href="kalkulator.html">Perhitungan</a>
+                    <a href="dat">Database</a>
+                </div>
+            </li>
+            <li><a href="paragraf.html">Paragraf</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+    <div class="content">
+        <h1>Biodata Pustakawan</h1>
+        <div class="profile">
+            <img src="pustakawan.jpg" alt="Foto Pustakawan">
+            <div class="bio">
+                <p><strong>Nama:</strong> Kelvin Obrian Nathanael Siringoringo</p>
+                <p><strong>Alamat:</strong> Jln. Tangki, Lor 20. Pematangsiantar</p>
+                <p><strong>Email:</strong> kelvinobrian10@gmail.com</p>
+                <p><strong>Telepon:</strong> 081370816844</p>
+                <p><strong>Pendidikan:</strong> S1 Ilmu Perpustakaan, Universitas Sumatera Utara</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="social-media">
+            <div class="social-icon"></div>
+            <div class="social-icon"></div>
+            <div class="social-icon"></div>
+        </div>
+    </div>
+</body>
+</html>
